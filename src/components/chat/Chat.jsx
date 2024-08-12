@@ -26,7 +26,61 @@ const Chat = () => {
 					<img src='./info.png' alt='infoIcon' />
 				</div>
 			</div>
-			<div className='center'></div>
+			<div className='center'>
+				<div className='message own'>
+					<div className='texts'>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa totam, ut, iste, quaerat non nemo
+							unde excepturi nostrum exercitationem facere dolore ex ad quasi deserunt molestias?
+							Reprehenderit iste corrupti distinctio!
+						</p>
+						<span>1 minute ago</span>
+					</div>
+				</div>
+				<div className='message'>
+					<img src='./avatar.png' alt='' />
+					<div className='texts'>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa totam, ut, iste, quaerat non nemo
+							unde excepturi nostrum exercitationem facere dolore ex ad quasi deserunt molestias?
+							Reprehenderit iste corrupti distinctio!
+						</p>
+						<span>1 minute ago</span>
+					</div>
+				</div>
+				<div className='message own'>
+					<div className='texts'>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa totam, ut, iste, quaerat non nemo
+							unde excepturi nostrum exercitationem facere dolore ex ad quasi deserunt molestias?
+							Reprehenderit iste corrupti distinctio!
+						</p>
+						<span>1 minute ago</span>
+					</div>
+				</div>
+				<div className='message'>
+					<img src='./avatar.png' alt='' />
+					<div className='texts'>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa totam, ut, iste, quaerat non nemo
+							unde excepturi nostrum exercitationem facere dolore ex ad quasi deserunt molestias?
+							Reprehenderit iste corrupti distinctio!
+						</p>
+						<span>1 minute ago</span>
+					</div>
+				</div>
+				<div className='message own'>
+					<div className='texts'>
+						<img src='https://wiki.guildwars.com/images/d/d8/Primal_Rage.jpg' alt='' />
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa totam, ut, iste, quaerat non nemo
+							unde excepturi nostrum exercitationem facere dolore ex ad quasi deserunt molestias?
+							Reprehenderit iste corrupti distinctio!
+						</p>
+						<span>1 minute ago</span>
+					</div>
+				</div>
+			</div>
 			<div className='bottom'>
 				<div className='icons'>
 					<img src='./img.png' alt='image' />

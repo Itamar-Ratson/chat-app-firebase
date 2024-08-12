@@ -6,5 +6,6 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 # Itamar - Notes
 
-1.
+1. changed scrollbars in chatList and chat center (guide had a customized browser to handle that)
+2.
 
