@@ -77,7 +77,10 @@ const Chat = () => {
 				</div>
 				<div className='message own'>
 					<div className='texts'>
-						<img src='https://wiki.guildwars.com/images/d/d8/Primal_Rage.jpg' alt='' />
+						<img
+							src='https://plus.unsplash.com/premium_photo-1666963323736-5ee1c16ef19d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJhbCUyMHNjZW5lcnl8ZW58MHx8MHx8fDA%3D'
+							alt=''
+						/>
 						<p>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa totam, ut, iste, quaerat non nemo
 							unde excepturi nostrum exercitationem facere dolore ex ad quasi deserunt molestias?
@@ -107,7 +110,8 @@ const Chat = () => {
 							customEmojis={[
 								{
 									names: ['Primal Rage'],
-									imgUrl: 'https://wiki.guildwars.com/images/d/d8/Primal_Rage.jpg',
+									imgUrl:
+										'https://plus.unsplash.com/premium_photo-1666963323736-5ee1c16ef19d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJhbCUyMHNjZW5lcnl8ZW58MHx8MHx8fDA%3D',
 									id: '[primal rage]',
 								},
 							]}
