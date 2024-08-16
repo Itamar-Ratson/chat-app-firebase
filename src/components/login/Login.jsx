@@ -30,7 +30,7 @@ const Login = () => {
 		const { email, password } = loginSubmission.target;
 
 		try {
-			const loginRespone = await signInWithEmailAndPassword(auth, email.value, password.value);
+			await signInWithEmailAndPassword(auth, email.value, password.value);
 		} catch (loginError) {
 			console.log(loginError);
 			toast.error(loginError.message);
