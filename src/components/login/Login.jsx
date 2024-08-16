@@ -1,7 +1,7 @@
 import './login.css';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../../lib/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import upload from '../../lib/upload';
@@ -24,8 +24,19 @@ const Login = () => {
 		}
 	};
 
-	const handleLogin = (loginSubmission) => {
+	const handleLogin = async (loginSubmission) => {
 		loginSubmission.preventDefault();
+		setLoading(true);
+		const { email, password } = loginSubmission.target;
+
+		try {
+			const loginRespone = await signInWithEmailAndPassword(auth, email.value, password.value);
+		} catch (loginError) {
+			console.log(loginError);
+			toast.error(loginError.message);
+		} finally {
+			setLoading(false);
+		}
 	};
 	const handleRegister = async (registerSubmission) => {
 		registerSubmission.preventDefault();
