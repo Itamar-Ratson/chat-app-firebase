@@ -20,6 +20,8 @@ This template provides a minimal setup to get React working in Vite with HMR and
 6. take a screenshot
 7. record voice
 8. call & video call
+9. message search
+10. delete message & account & chats
 
 # Refactor
 
