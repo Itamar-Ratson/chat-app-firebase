@@ -11,7 +11,6 @@ const Login = () => {
 		file: null,
 		url: '',
 	});
-
 	const [loading, setLoading] = useState(false);
 
 	const handleAvatar = (imageUploadEvent) => {
@@ -28,7 +27,6 @@ const Login = () => {
 		loginSubmission.preventDefault();
 		setLoading(true);
 		const { email, password } = loginSubmission.target;
-
 		try {
 			await signInWithEmailAndPassword(auth, email.value, password.value);
 		} catch (loginError) {
@@ -42,11 +40,9 @@ const Login = () => {
 		registerSubmission.preventDefault();
 		setLoading(true);
 		const { username, email, password } = registerSubmission.target;
-
 		try {
 			const registerResponse = await createUserWithEmailAndPassword(auth, email.value, password.value);
 			const imgUrl = await upload(avtar.file);
-
 			await setDoc(doc(db, 'users', registerResponse.user.uid), {
 				id: registerResponse.user.uid,
 				username: username.value,
