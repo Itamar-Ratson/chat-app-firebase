@@ -16,7 +16,7 @@ const Chat = () => {
 		url: '',
 	});
 	const { currentUser } = useUserStore();
-	const { chatId, user } = useChatStore();
+	const { chatId, user, isCurrentUserBlocked, isRecieverBlocked } = useChatStore();
 	const endRef = useRef(null);
 
 	const handleEmoji = (event) => {
@@ -100,10 +100,10 @@ const Chat = () => {
 		<div className='chat'>
 			<div className='top'>
 				<div className='user'>
-					<img src='./avatar.png' alt='userImage' />
+					<img src={user?.avatar || './avatar.png'} alt='userImage' />
 					<div className='text'>
-						<span>Jane Doe</span>
-						<p>Lorem ipsum, dolor sit amet.</p>
+						<span>{user?.username}</span>
+						<p>{isCurrentUserBlocked || isRecieverBlocked ? 'Blocked' : 'Lorem ipsum, dolor sit amet.'}</p>
 					</div>
 				</div>
 				<div className='icons'>
@@ -136,19 +136,22 @@ const Chat = () => {
 			<div className='bottom'>
 				<div className='icons'>
 					<label htmlFor='file'>
-						<img src='./img.png' alt='image' />
+						<img src='./img.png' alt='image' hidden={isCurrentUserBlocked || isRecieverBlocked} />
 					</label>
 					<input type='file' id='file' style={{ display: 'none' }} onChange={handleImage} />
-					<img src='./camera.png' alt='camera' />
-					<img src='./mic.png' alt='mic' />
+					<img src='./camera.png' alt='camera' hidden={isCurrentUserBlocked || isRecieverBlocked} />
+					<img src='./mic.png' alt='mic' hidden={isCurrentUserBlocked || isRecieverBlocked} />
 				</div>
 				<input
 					type='text'
-					placeholder='Type a message...'
+					placeholder={
+						isCurrentUserBlocked || isRecieverBlocked ? "Can't type a message" : 'Type a message...'
+					}
 					value={text}
 					onChange={(e) => setText(e.target.value)}
+					disabled={isCurrentUserBlocked || isRecieverBlocked}
 				/>
-				<div className='emoji'>
+				<div className='emoji' hidden={isCurrentUserBlocked || isRecieverBlocked}>
 					<img src='./emoji.png' alt='emojis' onClick={() => setOpen((open) => !open)} />
 					<div className='picker'>
 						<EmojiPicker
@@ -165,7 +168,10 @@ const Chat = () => {
 						/>
 					</div>
 				</div>
-				<button className='sendButton' onClick={handleSend}>
+				<button
+					className='sendButton'
+					onClick={handleSend}
+					disabled={isCurrentUserBlocked || isRecieverBlocked}>
 					Send
 				</button>
 			</div>
